@@ -3,6 +3,8 @@ import * as Hackle from "@hackler/js-client-sdk";
 const hackleClient = Hackle.createInstance("odrWk72cBX0tc2mHi3pHsz9VOPiOfuvQ");
 const button = document.getElementById("test-button");
 
+window.hackleClient = hackleClient;
+
 hackleClient.onReady(function () {
   const variation = hackleClient.variation(5);
 
@@ -13,6 +15,7 @@ hackleClient.onReady(function () {
   }
 
   button.addEventListener("click", () => {
+    console.log("clicked");
     hackleClient.track("sdk_test");
   });
 });
