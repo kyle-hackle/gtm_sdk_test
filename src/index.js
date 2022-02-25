@@ -12,8 +12,4 @@ hackleClient.onReady(function () {
   } else if (variation === "B") {
     button.style.backgroundColor = "red";
   }
-
-  button.addEventListener("click", (event) => {
-    hackleClient.track("button_click", userId);
-  });
 });
