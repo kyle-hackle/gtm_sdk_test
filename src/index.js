@@ -12,7 +12,7 @@ hackleClient.onReady(function () {
     button.style.backgroundColor = "red";
   }
 
-  button.addEventListener(() => {
+  button.addEventListener("click", () => {
     hackleClient.track("sdk_test");
   });
 });
