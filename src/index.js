@@ -11,4 +11,8 @@ hackleClient.onReady(function () {
   } else if (variation === "B") {
     button.style.backgroundColor = "red";
   }
+
+  button.addEventListener(() => {
+    hackleClient.track("sdk_test");
+  });
 });
