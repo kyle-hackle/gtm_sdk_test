@@ -1,6 +1,7 @@
 {
   "name": "sdk-test",
   "version": "1.0.0",
+  "homepage": "https://kyle-hackle.github.io/gtm_sdk_test/",
   "description": "",
   "main": "index.js",
   "scripts": {
