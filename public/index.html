@@ -1,6 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Hackle SDK -->
+    <script>
+      HACKLE_SDK_KEY = "odrWk72cBX0tc2mHi3pHsz9VOPiOfuvQ";
+    </script>
+    <script>
+      !(function (e, t) {
+        var n,
+          a = 3e3,
+          c = !1,
+          l = [];
+        function r() {}
+        (r.prototype.onReady = function (e, t) {
+          var n = { block: e, timeout: t };
+          l.push(n);
+        }),
+          (r.prototype.setUserId = function (e) {
+            n = e;
+          }),
+          (e.Hackle = e.Hackle || new r()),
+          (e.hackleClient = e.hackleClient || new r());
+        var o = setInterval(function () {
+            if (c) {
+              clearInterval(o);
+              for (var t = 0; t < l.length; t++)
+                e.hackleClient.onReady(l[t].block, l[t].timeout);
+              l.length = 0;
+            }
+            (a -= 50) < 0 && clearInterval(o);
+          }, 50),
+          i = t.createElement("script");
+        (i.type = "text/javascript"),
+          (i.crossOrigin = "anonymous"),
+          (i.src =
+            "https://cdn.jsdelivr.net/npm/@hackler/js-client-sdk@3.3.1/lib/index.umd.min.js"),
+          (i.async = !0);
+        var s = t.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(i, s),
+          (i.onload = function () {
+            (c = !0),
+              (e.Hackle = Hackle),
+              n && Hackle.setUserId(n),
+              (e.hackleClient = Hackle.createInstance(HACKLE_SDK_KEY));
+          }),
+          (i.onerror = function () {
+            clearInterval(o);
+          });
+      })(window, document);
+    </script>
+    <!-- End Hackle SDK -->
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
